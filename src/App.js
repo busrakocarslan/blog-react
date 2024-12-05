@@ -1,13 +1,14 @@
-import Login from "./page/Login";
-
-
+import AuthProvider from "./context/AuthProvider";
+import BlogProvider from "./context/BlogProvider";
+import AppRouter from "./router/AppRouter";
 
 function App() {
   return (
-    <div className="App">
-      <Login/>
-      
-    </div>
+    <AuthProvider>
+      <BlogProvider>
+        <AppRouter />
+      </BlogProvider>
+    </AuthProvider>
   );
 }
 

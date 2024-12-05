@@ -8,3 +8,13 @@
     @apply  flex justify-center items-center min-h-screen/*tüm sayfayı kapla min h-secreen  */         
   }
 }
+.buttonNewbg {
+  background-color: rgb(236, 110, 64);
+  transition: all 0.3s ease-in;
+  color: white;
+  padding: 5px;
+  border-radius: 10px;
+  &:hover{
+     @apply bg-primary;
+  }
+}
