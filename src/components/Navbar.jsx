@@ -1,6 +1,4 @@
-import React, { useContext, useState } from 'react'
-import { Link,NavLink, useLocation } from 'react-router-dom'
-import { FcHome } from "react-icons/fc"; 
+import React, { useContext, useState } from 'react' 
 import { FaSignOutAlt } from "react-icons/fa";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { MdClose } from "react-icons/md";
