@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { FaPencilAlt, FaTrashAlt } from "react-icons/fa";
 import { useBlogContext } from "../context/BlogProvider";
 import BlogForm from "../components/BlogForm";
@@ -33,7 +33,7 @@ const BlogCard = ({ blog }) => {
 
 
   return (
-    <div className="min-w-[300px] max-w-[300px] h-[250px] border-2 border-primary flex flex-col justify-around pb-5">
+    <div className="min-w-[350px] max-w-[350px] h-[250px] border-2 border-primary flex flex-col justify-around pb-5">
       {isEdit ? (
         <BlogForm
           initialData={{ title, body }}

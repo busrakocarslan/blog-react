@@ -1,44 +1,21 @@
-import axios from 'axios'
-import React, { createContext, useContext, useEffect, useState } from 'react'
+import axios from "axios";
+import React, { createContext, useContext, useEffect, useState } from "react";
 
+const BlogContext = createContext();
 
-const BlogContext=createContext()
+//costom hook-use
+export const useBlogContext = () => {
+  return useContext(BlogContext);
+};
 
-//costom hook ile çağırma 
-export const useBlogContext=()=>{
-    return useContext(BlogContext)
-}
+const BlogProvider = ({ children }) => {
+  const [blogs, setBlogs] = useState([]);
 
-const BlogProvider = ({children}) => {
-    const [blogs,setBlogs]=useState([])
-
-
-  const getData=async()=>{
+  const getData = async () => {
     try {
-     const {data}= await axios(`https://dummyjson.com/posts`)
-     console.log({data});
-     setBlogs(data.posts)
-    } catch (error) {
-      console.log(error);
-      
-    }
-
-  }
-
-  const updateBlog = async (id, updatedBlog) => {
-    try {
-      const { data } = await axios.put(`https://dummyjson.com/posts/${id}`, updatedBlog);
-      setBlogs((prev) =>
-        prev.map((blog) => (blog.id === id ? { ...blog, ...data } : blog))
-      );
-    } catch (error) {
-      console.log(error);
-    }
-  };
-  const deleteBlog = async (id) => {
-    try {
-      await axios.delete(`https://dummyjson.com/posts/${id}`);
-      setBlogs((item) => item.filter((blog) => blog.id !== id));
+      const { data } = await axios(`https://dummyjson.com/posts`);
+      console.log({ data });
+      setBlogs(data.posts);
     } catch (error) {
       console.log(error);
     }
@@ -53,14 +30,39 @@ const BlogProvider = ({children}) => {
     }
   };
 
-  useEffect(() => {
-   getData()
-  }, [])
-  return (
-    <BlogContext.Provider value={{blogs,updateBlog,deleteBlog,addBlog}}>
-        {children}
-    </BlogContext.Provider>
-  )
-}
+  const updateBlog = async (id, updatedBlog) => {
+    try {
+      const { data } = await axios.put(
+        `https://dummyjson.com/posts/${id}`,
+        updatedBlog
+      );
+      setBlogs((prev) =>
+        prev.map((blog) => (blog.id === id ? { ...blog, ...data } : blog))
+      );
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
-export default BlogProvider
+  const deleteBlog = async (id) => {
+    try {
+      await axios.delete(`https://dummyjson.com/posts/${id}`);
+      setBlogs((item) => item.filter((blog) => blog.id !== id));
+    } catch (error) {
+      console.log(error);
+    }
+  };
+ 
+
+  useEffect(() => {
+    getData();
+  }, []);
+
+  return (
+    <BlogContext.Provider value={{ blogs, updateBlog, deleteBlog, addBlog }}>
+      {children}
+    </BlogContext.Provider>
+  );
+};
+
+export default BlogProvider;

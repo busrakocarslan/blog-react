@@ -1,20 +1,20 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import { useBlogContext } from "../context/BlogProvider";
 
 const BlogDetail = ({}) => {
   const navigate = useNavigate();
   const { id } = useParams();
-  const [state, setState] = useState({});
-  const getDetailBlog = async () => {
-    const { data } = await axios(`https://dummyjson.com/posts/${id}`);
-    setState(data);
-  };
-  useEffect(() => {
-    getDetailBlog();
-  }, []);
+  const { blogs } = useBlogContext();
 
-  const { title, body } = state;
+  const blog= blogs.find((blog)=>blog.id === +(id))
+
+  if(!blog){
+    return  <p className="text-center uppercase text-red-500">Blog bulunamadı!</p> 
+  }
+
+  const { title, body } = blog;
   return (
     <div className="mx-auto max-w-2xl px-4 pt-8 sm:px-6 sm:py-24 lg:max-w-7xl  lg:px-8 flex flex-row sm:flex-col flex-wrap gap-5 justify-between ">
       <div className="w-full lg:w-5/12 flex flex-col gap-2 justify-evenly p-4">

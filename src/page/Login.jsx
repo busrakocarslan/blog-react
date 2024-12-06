@@ -19,7 +19,7 @@ const Login = () => {
     <div className="loginDiv">
       <div className="h-[500px] w-11/12 sm:w-[500px] bg-purple-200 rounded-[50px] flex p-10 flex-col text-center">
         <div>
-          <h1 className="animate-bounce text-[22px] font-pageFont font-[900] dark:text-white dark:bg-dark uppercase">
+          <h1 className="animate-bounce text-[22px] font-pageFont font-[900] uppercase">
             Welcome Friend
           </h1>
         </div>

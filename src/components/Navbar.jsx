@@ -32,7 +32,7 @@ const Navbar = () => {
         <div>
         
             <div className='md:hidden flex justify-between p-5'>
-            <Link to="https://www.linkedin.com/in/busrakocarslan/" target='true'><FcHome /></Link>
+            
                 <button onClick={()=>setShow(!show)} className='menu-btn text-gray-900 hover:text-gray-500 text-label duration-150' > {show ? <MdClose /> :
                     <GiHamburgerMenu />}
 
@@ -55,7 +55,7 @@ const Navbar = () => {
                             
                         }
                     </ul>
-                    <NavLink to={"/"} className='hover:text-black hover:font-pageFont p-2 duration-300 text-orange-400 rounded-xl font-montepasifico' onClick={()=>logout()}>LogOut<FaSignOutAlt className='inline-block ms-3'/></NavLink>
+                    <NavLink className='hover:text-black hover:font-pageFont p-2 duration-300 text-orange-400 rounded-xl font-montepasifico' onClick={()=>logout()}>LogOut<FaSignOutAlt className='inline-block ms-3'/></NavLink>
                
 
                 </div>
