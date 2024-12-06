@@ -9,6 +9,10 @@ import { AuthContext } from '../context/AuthProvider';
 const navigation=[
    
     {
+        title:"Home",
+        path:"/dashboard/home"
+    },
+    {
         title:"Blog",
         path:"/dashboard/blog"
     },
@@ -16,10 +20,6 @@ const navigation=[
         title:"NewBlog",
         path:"/dashboard/newblog"
     },
-    {
-        title:"Contact",
-        path:"/dashboard/contact"
-    }
 ]
 
 const Navbar = () => {

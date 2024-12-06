@@ -16,7 +16,7 @@ const BlogDetail = ({}) => {
 
   const { title, body } = state;
   return (
-    <div className="mx-auto max-w-2xl px-4 pt-8 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8 flex flex-col justify-between ">
+    <div className="mx-auto max-w-2xl px-4 pt-8 sm:px-6 sm:py-24 lg:max-w-7xl  lg:px-8 flex flex-row sm:flex-col flex-wrap gap-5 justify-between ">
       <div className="w-full lg:w-5/12 flex flex-col gap-2 justify-evenly p-4">
         <h3 className="text-5xl text-gray-900 font-blogFont m-5 font-[700]">{title}</h3>
         <p className="text-gray-400 text-xl mt-1 h-[100px] font-blogFont">
@@ -24,7 +24,7 @@ const BlogDetail = ({}) => {
         </p>
 
       </div>
-        <div className="flex justify-end gap-3 ">
+        <div className="flex justify-end gap-3 m-3 ">
           <button
             onClick={() => navigate(-1)}
             className="border rounded-lg bg-orange-400 text-gray-700 font-bold p-2"
