@@ -18,6 +18,6 @@ Bu proje, **React** ve **Tailwind CSS** kullanılarak geliştirilmiş bir blog y
 ### Duyarlı Tasarım
 - **Tailwind CSS** kullanılarak güzel ve uyumlu bir tasarım yapılmıştır.
 
- ## <img src="./blog-react/public/reactblog-gif.gif"  alt="blogGıf">
+ ## <img src="./public/reactblog-gif.gif"  alt="blogGıf">
 
 
