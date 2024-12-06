@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { useBlogContext } from "../context/BlogProvider";
 
-const BlogDetail = ({}) => {
+const BlogDetail = () => {
   const navigate = useNavigate();
   const { id } = useParams();
   const { blogs } = useBlogContext();
